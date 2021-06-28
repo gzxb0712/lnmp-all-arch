@@ -1,0 +1,116 @@
+[
+  {
+    "source": "php:8.0.6-cli-alpine"
+  },
+  {
+    "source": "php:8.0.6-fpm-alpine"
+  },
+  {
+    "source": "php:8.0.6-unit-alpine"
+  },
+  {
+    "source": "php:8.0.6-composer-alpine"
+  },
+  {
+    "source": "php:8.0.6-swoole-alpine"
+  },
+  {
+    "source": "php:8.0.6-s6-alpine"
+  },
+  {
+    "source": "php:7.4.19-cli-alpine"
+  },
+  {
+    "source": "php:7.4.19-fpm-alpine"
+  },
+  {
+    "source": "php:7.4.19-unit-alpine"
+  },
+  {
+    "source": "php:7.4.19-composer-alpine"
+  },
+  {
+    "source": "php:7.4.19-swoole-alpine"
+  },
+  {
+    "source": "php:7.4.19-supervisord-alpine"
+  },
+  {
+    "source": "php:7.4.19-s6-alpine"
+  },
+  {
+    "source": "php:7.3.28-cli-alpine"
+  },
+  {
+    "source": "php:7.3.28-fpm-alpine"
+  },
+  {
+    "source": "php:7.3.28-unit-alpine"
+  },
+  {
+    "source": "php:7.3.28-composer-alpine"
+  },
+  {
+    "source": "php:7.3.28-swoole-alpine"
+  },
+  {
+    "source": "php:7.3.28-supervisord-alpine"
+  },
+  {
+    "source": "php:7.2.34-cli-alpine"
+  },
+  {
+    "source": "php:7.2.34-fpm-alpine"
+  },
+  {
+    "source": "php:7.2.34-unit-alpine"
+  },
+  {
+    "source": "php:7.2.34-composer-alpine"
+  },
+  {
+    "source": "php:7.2.34-swoole-alpine"
+  },
+  {
+    "source": "php:7.2.34-supervisord-alpine"
+  },
+  {
+    "source": "php:nightly-cli-alpine"
+  },
+  {
+    "source": "php:nightly-fpm-alpine"
+  },
+  {
+    "source": "php:nightly-unit-alpine"
+  },
+  {
+    "source": "php:nightly-composer-alpine"
+  },
+  {
+    "source": "php:nightly-swoole-alpine"
+  },
+  {
+    "source": "php:nightly-s6-alpine"
+  },
+  {
+    "source": "php:php-cs-fixer"
+  },
+  {
+    "source": "php:doctum"
+  },
+  {
+    "source": "php:phpdox"
+  },
+  {
+    "source": "php:phpcpd"
+  },
+  {
+    "source": "php:phpdox"
+  },
+  {
+    "source": "php:phploc"
+  },
+  {
+    "source": "php:phpmd"
+  }
+]

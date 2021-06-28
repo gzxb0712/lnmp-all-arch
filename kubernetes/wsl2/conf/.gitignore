@@ -1,0 +1,11 @@
+/*
+!.gitignore
+!*.temp
+!cni
+!cri-containerd
+cri-containerd/1.5/config.toml
+!crio
+crio/crio.conf
+crio/crio.conf.d
+!containers
+!kata-containers

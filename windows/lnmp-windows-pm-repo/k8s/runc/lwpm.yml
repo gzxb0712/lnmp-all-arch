@@ -1,0 +1,15 @@
+name: runc
+version: 1.0.0-rc10
+url: "https://github.com/opencontainers/runc/releases/download/v${VERSION}/runc.amd64"
+url-mirror: https://download.fastgit.org/opencontainers/runc/releases/download/v${VERSION}/runc.amd64
+scripts:
+  platform-reqs: if(!$IsLinux){echo $False}
+  dist: |
+    _mkdir $env:LWPM_PKG_ROOT/dist
+
+    curl -L `
+      $url `
+      -o $env:LWPM_PKG_ROOT/dist/runc
+platform:
+  - architecture: amd64
+    os: linux

@@ -1,0 +1,12 @@
+version: "3.8"
+
+x-common:
+  &common
+  labels:
+    - ${LNMP_DOMAIN:-com.khs1994.lnmp}=true
+    - ${LNMP_DOMAIN:-com.khs1994.lnmp}.app.env=development
+
+services:
+  rabbitmq:
+    << : *common
+    image: ${LNMP_LIBRARY_NS:-library}/rabbitmq:${LNMP_RABBITMQ_VERSION:-3.8.16}-management-alpine

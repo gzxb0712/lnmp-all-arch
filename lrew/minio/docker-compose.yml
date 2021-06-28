@@ -1,0 +1,49 @@
+version: "3.8"
+
+x-common:
+  &common
+  restart: always
+  env_file: ./cli/timezone.env
+  networks:
+    - backend
+  # dns:
+  #   - ${DNS:-114.114.114.114}
+
+x-common-label:
+  &common-label
+  labels:
+    - ${LNMP_DOMAIN:-com.khs1994.lnmp}=true
+    - ${LNMP_DOMAIN:-com.khs1994.lnmp}.app.env=development
+
+services:
+  minio:
+    << : *common
+    image: minio/minio:${LNMP_MINIO_VERSION:-RELEASE.2021-01-30T00-20-58Z}
+    volumes:
+      - type: volume
+        source: minio-data
+        target: /data
+      # - ./config/nginx/demo-ssl/t.khs1994.com.crt:/root/.minio/certs/public.crt
+      # - ./config/nginx/demo-ssl/t.khs1994.com.key:/root/.minio/certs/private.key
+    # ports:
+    #   - "9000:9000"
+    environment:
+      # https://github.com/minio/minio/blob/master/docs/config/README.md
+      MINIO_ACCESS_KEY: ${MINIO_ACCESS_KEY:-minioadmin}
+      MINIO_SECRET_KEY: ${MINIO_SECRET_KEY:-minioadmin}
+      MINIO_REGION: ${MINIO_REGION:-'us-east-1'}
+      MINIO_BROWSER: ${MINIO_BROWSER:-on}
+      MINIO_WORM: ${MINIO_WORM:-off}
+      MINIO_DOMAIN: ${MINIO_DOMAIN:-''}
+    command: server /data
+    networks:
+      - backend
+      - frontend
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      retries: 3
+      timeout: 5s
+
+volumes:
+  minio-data:
+    << : *common-label

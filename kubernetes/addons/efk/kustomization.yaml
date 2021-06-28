@@ -1,0 +1,4 @@
+bases:
+- ./es
+- ./fluentd
+- ./kibana

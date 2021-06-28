@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+  k8s_apiserver:
+    image: k8s.gcr.io/kube-apiserver:v1.21.0
+
+  k8s_dashboard:
+    image: kubernetesui/dashboard:v2.2.0
+
+  coredns:
+    image: k8s.gcr.io/coredns/coredns:v1.8.0
+
+  pause:
+    # image: us.gcr.io/k8s-artifacts-prod/kubernetes/pause:TAG
+    image: k8s.gcr.io/pause:3.5
+    # https://github.com/kubernetes/kubernetes/tree/master/build/pause
+
+  calico:
+    image: calico/cni:v3.19.0
+
+  ingress_nginx:
+    image: k8s.gcr.io/ingress-nginx/controller:v0.46.0
+
+  ingress-kong:
+    image: kong-docker-kubernetes-ingress-controller.bintray.io/kong-ingress-controller:0.9.1
+
+  metrics_server:
+    image: k8s.gcr.io/metrics-server/metrics-server:v0.5.0
+
+  butane:
+    image: quay.io/coreos/butane:v0.11.0
+
+  php-fpm-exporter:
+    image: bakins/php-fpm-exporter:v0.6.1
